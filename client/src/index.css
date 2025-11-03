@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    /* Prevent zoom on input focus on iOS */
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium py-2.5 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation;
+    min-height: 44px; /* iOS touch target size */
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 active:bg-gray-400 text-gray-800 font-medium py-2.5 px-4 rounded-lg transition-colors duration-200 touch-manipulation;
+    min-height: 44px;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-medium py-2.5 px-4 rounded-lg transition-colors duration-200 touch-manipulation;
+    min-height: 44px;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-3 sm:p-4 md:p-6;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2.5 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-base;
+    min-height: 44px; /* iOS touch target size */
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .card {
+    @apply p-3;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  /* Better touch targets on mobile */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Better scrolling on mobile */
+@media (max-width: 768px) {
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
