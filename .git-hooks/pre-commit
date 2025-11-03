@@ -1,0 +1,4 @@
+#!/bin/sh
+# Auto commit hook - لكن هذا لن يعمل على Windows بدون Git Bash
+# الأفضل استخدام PowerShell script
+
